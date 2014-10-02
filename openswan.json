@@ -1,5 +1,13 @@
 {
-     "run_list": [
-        "recipe[nginx::default]"
+    "openswan": {
+      "region": "us-est-1",
+      "siblingregion": "eu-west-1",
+      "region_eip": "10.11.12.13",
+      "sibling_eip": "14.15.16.17",
+      "region_cidr": "172.16.0.0/24",
+      "sibling_cidr": "192.168.0.0/24"
+    },
+    "run_list": [
+	"recipe[openswan::default]"
     ]
 }

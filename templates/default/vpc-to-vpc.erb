@@ -1,0 +1,11 @@
+conn <%= node['openswan']['sibling_region'] %>-to-<%= node['openswan']['sibling_region'] %>
+    type=tunnel
+    authby=secret
+    left=%defaultroute
+    leftid=<%= node['openswan']['region_eip'] %>
+    leftnexthop=%defaultroute
+    leftsubnet=<%= node['openswan']['region_cidr'] %>
+    right=<%= node['openswan']['sibling_eip'] %>
+    rightsubnet=<%= node['openswan']['sibling_cidr'] %>
+    pfs=yes
+    auto=start
