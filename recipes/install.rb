@@ -1,3 +1,7 @@
+package "lsof" do
+  action :install
+end
+
 package "openswan" do
   action :install
 end
