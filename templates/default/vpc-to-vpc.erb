@@ -1,4 +1,4 @@
-conn <%= node['openswan']['sibling_region'] %>-to-<%= node['openswan']['sibling_region'] %>
+conn vpc-to-vpc
     type=tunnel
     authby=secret
     left=%defaultroute
