@@ -7,7 +7,7 @@ file.insert_line_if_no_match('^net.ipv4.conf.default.accept_redirects = 0$', "ne
 file.insert_line_if_no_match('^net.ipv4.conf.default.send_redirects = 0$', "net.ipv4.conf.default.send_redirects = 0")
 file.write_file
 
-execute "" do
+execute "updatesysctlconfig" do
     command "sysctl -p"
     command "service network restart"
     command "service ipsec restart"
